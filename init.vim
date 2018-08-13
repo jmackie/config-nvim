@@ -22,6 +22,7 @@ Plug 'ntpeters/vim-better-whitespace'      " White space trimming etc.
 Plug 'Raimondi/delimitMate'                " Auto closing of quotes, parens etc.
 Plug 'godlygeek/tabular'                   " Code alignment/tabularization
 Plug 'tpope/vim-surround'                  " Quoting/parenthesizing commands
+Plug 'tpope/vim-repeat'                    " Better '.' repeating
 Plug 'junegunn/goyo.vim'                   " Disables certain plugins for distraction-free editing zen
 Plug 'ctrlpvim/ctrlp.vim'                  " Fuzzy finder
 Plug 'bagrat/vim-workspace'                " Session management
