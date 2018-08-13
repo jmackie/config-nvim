@@ -92,6 +92,9 @@ map <c-space> ?
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
 
+" Ctrl+b makes
+map <c-b> :make<CR>
+
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
