@@ -68,7 +68,7 @@ Plug 'junegunn/fzf'    " (Optional) multi-entry selection UI
 "Plug 'tpope/vim-unimpaired'
 "Plug 'euclio/gitignore.vim'
 "Plug 'christoomey/vim-tmux-navigator'
-"Plug 'tyru/open-browser.vim'            "
+"Plug 'tyru/open-browser.vim'
 "Plug 'tyru/open-browser-github.vim'
 
 call plug#end()  " TODO: maybe use less plugins...
