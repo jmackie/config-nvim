@@ -31,6 +31,7 @@ Plug 'ryanoasis/vim-devicons'              " File type glyphs/icons for NERDTree
 Plug 'mileszs/ack.vim'                     " Better(?) grep
 Plug 'majutsushi/tagbar'                   " Code outline
 Plug 'ludovicchabant/vim-gutentags'        " Tag management
+Plug 'christoomey/vim-tmux-navigator'      " Integration with tmux
 
 " Colours
 Plug 'NLKNguyen/papercolor-theme'          " Material-inspired colour scheme
