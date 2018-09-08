@@ -41,24 +41,25 @@ Plug 'christoomey/vim-conflicted'          " Merge conflict resolution
 Plug 'airblade/vim-gitgutter'              " Gutter signs for git diff
 
 " Languages/Syntax
-Plug 'neovimhaskell/haskell-vim',          { 'for': 'haskell' }
-Plug 'ndmitchell/ghcid',                   { 'rtp': 'plugins/nvim' }
-Plug 'Twinside/vim-hoogle',                { 'for': 'haskell' }
-Plug 'rust-lang/rust.vim',                 { 'for': 'rust' }
-Plug 'racer-rust/vim-racer',               { 'for': 'rust' }
-Plug 'purescript-contrib/purescript-vim',  { 'for': 'purescript' }
-Plug 'frigoeu/psc-ide-vim',                { 'for': 'purescript' }
-Plug 'vim-syntastic/syntastic',            { 'for': 'purescript' }
-Plug 'elmcast/elm-vim',                    { 'for': 'elm' }
+Plug 'neovimhaskell/haskell-vim',          { 'for': 'haskell'        }
+Plug 'ndmitchell/ghcid',                   { 'rtp': 'plugins/nvim'   }
+Plug 'Twinside/vim-hoogle',                { 'for': 'haskell'        }
+Plug 'rust-lang/rust.vim',                 { 'for': 'rust'           }
+Plug 'racer-rust/vim-racer',               { 'for': 'rust'           }
+Plug 'purescript-contrib/purescript-vim',  { 'for': 'purescript'     }
+Plug 'frigoeu/psc-ide-vim',                { 'for': 'purescript'     }
+Plug 'vim-syntastic/syntastic',            { 'for': 'purescript'     }
+Plug 'elmcast/elm-vim',                    { 'for': 'elm'            }
 Plug 'w0rp/ale',                           { 'for': ['elm', 'idris'] }
-Plug 'idris-hackers/idris-vim',            { 'for': 'idris' }
-Plug 'LnL7/vim-nix',                       { 'for': 'nix' }
-Plug 'klen/python-mode',                   { 'for': 'python' }
-Plug 'mattn/emmet-vim',                    { 'for': 'html' }
-Plug 'moll/vim-node',                      { 'for': 'javascript' }
-Plug 'ekalinin/Dockerfile.vim',            { 'for': 'Dockerfile' }
-Plug 'cespare/vim-toml',                   { 'for': 'toml' }
-Plug 'maralla/vim-toml-enhance',           { 'for': 'toml' }
+Plug 'idris-hackers/idris-vim',            { 'for': 'idris'          }
+Plug 'LnL7/vim-nix',                       { 'for': 'nix'            }
+Plug 'klen/python-mode',                   { 'for': 'python'         }
+Plug 'mattn/emmet-vim',                    { 'for': 'html'           }
+Plug 'moll/vim-node',                      { 'for': 'javascript'     }
+Plug 'dag/vim-fish',                       { 'for': 'fish'           }
+Plug 'ekalinin/Dockerfile.vim',            { 'for': 'Dockerfile'     }
+Plug 'cespare/vim-toml',                   { 'for': 'toml'           }
+Plug 'maralla/vim-toml-enhance',           { 'for': 'toml'           }
 
 " Language Server Protocol (LSP)
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
