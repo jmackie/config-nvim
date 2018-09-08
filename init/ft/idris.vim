@@ -1,4 +1,5 @@
-let g:neomake_idris_enabled_makers = []  " Prefer ALE
+let g:neomake_idris_enabled_makers = []  " ALE has nicer error reporting
+let g:ale_idris_idris_options      = "--package contrib"
 
 " idris-hackers/idris-vim
 let g:idris_indent_if              = 3
