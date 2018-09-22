@@ -1,4 +1,4 @@
-" TODO: make this work nicely in Nix environments
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie', '--lsp'],
     \ 'rust':    ['rustup', 'run', 'nightly', 'rls']

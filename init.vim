@@ -62,7 +62,7 @@ Plug 'cespare/vim-toml',                   { 'for': 'toml'           }
 Plug 'maralla/vim-toml-enhance',           { 'for': 'toml'           }
 
 " Language Server Protocol (LSP)
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'make release' }
 Plug 'junegunn/fzf'    " (Optional) multi-entry selection UI
 
 " Recyling bin
