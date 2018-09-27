@@ -1,7 +1,8 @@
 " Neoformat on save
 augroup fmt
     autocmd!
-    autocmd BufWritePre * undojoin | Neoformat
+    "autocmd BufWritePre * undojoin | Neoformat  <- undo join errors sometimes
+    autocmd BufWritePre * Neoformat
 augroup END
 
 let g:neoformat_run_all_formatters = 1
