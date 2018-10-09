@@ -72,6 +72,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 command! -nargs=* T  below split  | terminal <args>
 command! -nargs=* VT below vsplit | terminal <args>
 
+" Essential commands
+command Dunno :normal i¯\_(ツ)_/¯<esc>
+
 " Mappings
 
 " Window Navigation
