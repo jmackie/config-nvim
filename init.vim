@@ -56,7 +56,6 @@ Plug 'LnL7/vim-nix',                       { 'for': 'nix'            }
 Plug 'klen/python-mode',                   { 'for': 'python'         }
 Plug 'mattn/emmet-vim',                    { 'for': 'html'           }
 Plug 'moll/vim-node',                      { 'for': 'javascript'     }
-Plug 'dag/vim-fish',                       { 'for': 'fish'           }
 Plug 'ekalinin/Dockerfile.vim',            { 'for': 'Dockerfile'     }
 Plug 'cespare/vim-toml',                   { 'for': 'toml'           }
 Plug 'maralla/vim-toml-enhance',           { 'for': 'toml'           }
