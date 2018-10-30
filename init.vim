@@ -30,7 +30,7 @@ Plug 'ryanoasis/vim-devicons'              " File type glyphs/icons for NERDTree
                                            " NOTE: must come after ctrlp
 Plug 'mileszs/ack.vim'                     " Better(?) grep
 Plug 'majutsushi/tagbar'                   " Code outline
-Plug 'ludovicchabant/vim-gutentags'        " Tag management
+"Plug 'ludovicchabant/vim-gutentags'        " Tag management
 
 " Colours
 Plug 'NLKNguyen/papercolor-theme'          " Material-inspired colour scheme
