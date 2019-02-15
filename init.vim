@@ -223,6 +223,8 @@ let g:lightline = {
 \   'component_function': {
 \       'gitbranch': 'fugitive#head'
 \   },
+\   'separator': { 'left': '', 'right': '' },
+\   'subseparator': { 'left': '', 'right': '' },
 \}
 
 
