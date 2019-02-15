@@ -117,13 +117,29 @@ nnoremap <c-right> :vertical resize +2<CR>
 " FILE EXPLORERE ---------------------------------------------------------------
 let g:netrw_banner = 0         " Don't display banner
 let g:netrw_liststyle = 3      " Tree-view
-let g:netrw_browse_split = 4   " Use the previous window to open the file
+let g:netrw_browse_split = 0   " Open the file by re-using the same window
 let g:netrw_winsize = 30       " Absolute width of netrw window
 let g:netrw_altv = 1           " Open file in vertical split with v
 let g:netrw_dirhistmax = 0     " Don't write a .netrwhist file
 
 " Ctrl+e opens the file explorer
-map <c-e> :Lexplore<cr>
+let g:NetrwIsOpen=0
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+noremap <silent> <C-e> :call ToggleNetrw()<CR>
 
 
 " PLUGINS ----------------------------------------------------------------------
