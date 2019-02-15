@@ -56,7 +56,7 @@ let mapleader      = ','
 let maplocalleader = ','
 
 
-" COMMANDS ---------------------------------------------------------------------
+" COMMANDS =====================================================================
 
 " :T creates a new terminal split (VT for a vertical split)
 command! -nargs=* T  below split | terminal <args>
@@ -68,7 +68,7 @@ command! SpellDisable setlocal nospell
 command Dunno :normal i¯\_(ツ)_/¯<esc>
 
 
-" MAPPINGS ---------------------------------------------------------------------
+" MAPPINGS =====================================================================
 
 " Window Navigation
 " (make uppercase navigation work across windows)
@@ -114,7 +114,7 @@ nnoremap <c-left>  :vertical resize -2<CR>
 nnoremap <c-right> :vertical resize +2<CR>
 
 
-" PLUGINS ----------------------------------------------------------------------
+" PLUGINS ======================================================================
 " https://twitter.com/mjackson/status/1073618826141396992
 " https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
 
@@ -130,7 +130,6 @@ endif
 " Load all the plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -140,27 +139,39 @@ Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
+Plug 'vim-scripts/gitignore'
 
 Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
 
-"     tpope/vim-vinegar
+" scrooloose/nerdtree
+" -------------------
+map  <c-n>     :NERDTreeToggle<cr>
+nmap <leader>n :NERDTreeFind<cr>
 
-let g:netrw_liststyle = 3     " Prefer tree view
-let g:netrw_dirhistmax = 0    " Don't write a .netrwhist file
+let g:NERDTreeWinPos = 'left'
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeWinSize = 35
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeIgnore = ['\.git$']
+let g:NERDTreeRespectWildIgnore = 1
 
-autocmd Filetype netrw setlocal statusline=%#Normal#  " doesnt work?
+" Close vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-"     junegunn/fzf.vim
-
+" junegunn/fzf.vim
+" ----------------
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
@@ -170,12 +181,12 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" ctrlp habit
+" ctrlp habit...
 nmap <c-p> :Files<cr>
 
 
-"     w0rp/ale
-
+" w0rp/ale
+" --------
 " https://github.com/w0rp/ale/blob/master/supported-tools.md
 " https://github.com/w0rp/ale/tree/master/ale_linters
 let b:ale_linters = {
@@ -208,8 +219,8 @@ let g:ale_sign_warning = '⚠'
 let g:ale_set_highlights = 0  " don't highlight
 
 
-"     itchyny/lightline.vim
-
+" itchyny/lightline.vim
+" ---------------------
 let g:lightline = {
 \   'colorscheme': 'powerline',
 \   'active': {
@@ -226,8 +237,8 @@ let g:lightline = {
 \}
 
 
-"     NLKNguyen/papercolor-theme
-
+" NLKNguyen/papercolor-theme
+" --------------------------
 " Use the terminal's background color
 " NOTE: must come before `colorscheme PaperColor`
 let g:PaperColor_Theme_Options = {'theme': {'default.dark': { 'transparent_background': 1 } } }
