@@ -1,87 +1,232 @@
+set nocompatible               " Get rid of Vi compatibility mode. SET FIRST!
+set shell=bash                 " Use a bourne-compatible shell
+set encoding=utf8              " UTF-8 encoding
+set conceallevel=0             " Disable concealing
+set ffs=unix,mac,dos           " Unix as the standard file type
+set exrc                       " Enable per-project .vimrc files
+set secure                     " Don't let other foreign vimrcs run dangerous commands
+set gdefault                   " global sed by default
+set number                     " Show line numbers
+set colorcolumn=80             " Ruler at 80 chars
+set cursorline                 " Highlight the current line
+set history=200                " Remember a lot of stuff
+set ruler                      " Always show info along bottom
+set cmdheight=1                " Set height of the command bar
+set scrolloff=7                " Some lines around scroll for context
+set autoread                   " Auto-reload files changed on disk
+set noswapfile                 " Disable swap files
+set updatecount=0              " Disable swap files
+set wildmode=longest,list,full " :e completion mode
+set nofoldenable               " Disable code folding
+set clipboard+=unnamedplus     " Use system clipboard for yanks
+set termguicolors              " Enable 24-bit color
+set textwidth=80               " Wrap text at 80 characters...
+set nowrap                     " ...but only if I say so
+set updatetime=100             " Suggested by gitgutter
+set backupcopy=yes             " Play nice with file watchers
+
+set cindent                    " Smart, customizable indentation
+set tabstop=4                  " Soft tab size (default)
+set softtabstop=4              " Unify
+set shiftwidth=4               " Indent/outdent by 4 columns
+set shiftround                 " Always indent/outdent to the nearest tabstop
+set expandtab                  " Use spaces instead of tabs
+set smarttab                   " Use tabs at the start of a line, spaces elsewhere
+
+set hlsearch                   " Highlight all search results
+set incsearch                  " Highlight while you type your search
+set ignorecase                 " Make searches case-insensitive...
+set smartcase                  " ...unless they contain at least one capital letter
+
+filetype plugin indent on      " Filetype detection[ON] plugin[ON] indent[ON]
+syntax enable                  " Enable syntax highlighting (previously syntax on)
+
+" Make backspace act as it should
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Mouse issue (https://github.com/neovim/neovim/wiki/Following-HEAD#20170403)
+set mouse=a
+
+" Vimdiff
+set diffopt=filler,vertical
+
+" Leader
+let mapleader      = ','
+let maplocalleader = ','
+
+
+" COMMANDS ---------------------------------------------------------------------
+
+" :T creates a new terminal split (VT for a vertical split)
+command! -nargs=* T  below split | terminal <args>
+command! -nargs=* VT below vsplit | terminal <args>
+
+command! SpellEnable  setlocal spell spelllang=en_gb
+command! SpellDisable setlocal nospell
+
+command Dunno :normal i¯\_(ツ)_/¯<esc>
+
+
+" MAPPINGS ---------------------------------------------------------------------
+
+" Window Navigation
+" (make uppercase navigation work across windows)
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
+
+" Map VIM 0 to first non-blank character
+map 0 ^
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <space> /
+map <c-space> ?
+
+" Ctrl+s saves
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>
+
+" Ctrl+b makes
+map <c-b> :make<CR>
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Visual mode '*' searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+
+" Plain arrows move text around
+nmap <up>    [e
+nmap <down>  ]e
+nmap <left>  <<
+nmap <right> >>
+vmap <up>    [egv
+vmap <down>  ]egv
+vmap <left>  <gv
+vmap <right> >gv
+
+" Ctrl+arrow to resize pane
+nnoremap <c-up>    :resize +2<CR>
+nnoremap <c-down>  :resize -2<CR>
+nnoremap <c-left>  :vertical resize -2<CR>
+nnoremap <c-right> :vertical resize +2<CR>
+
+
+" FILE TREE --------------------------------------------------------------------
+let g:netrw_banner = 0         " Don't display banner
+let g:netrw_liststyle = 3      " Tree-view
+let g:netrw_browse_split = 4   " Use the previous window to open the file
+let g:netrw_winsize = 25       " Absolute width of netrw window
+let g:netrw_altv = 1           " Open file in vertical split with v
+let g:netrw_dirhistmax = 0     " Don't write a .netrwhist file
+
+map <c-e> :Lexplore<cr>
+
+
+" PLUGINS ----------------------------------------------------------------------
+" https://twitter.com/mjackson/status/1073618826141396992
+" https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
+
 " Make sure vim-plug is installed
 if empty(glob("~/.config/nvim/autoload/plug.vim"))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     " TODO: This isn't as elegant as I'd like...
     autocmd VimEnter * PlugInstall
     source $MYVIMRC
-else
+endif
+
 
 " Load all the plugins
 call plug#begin('~/.config/nvim/plugged')
 
-" General/Editing
-Plug 'neomake/neomake'                     " Code linting
-                                           " NOTE: I'm beginning to think ALE is better...
-Plug 'sbdchd/neoformat'                    " Code formatting
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdaeRemotePlugins' } " Code completion
-Plug 'tpope/vim-commentary'                " Code comment commands
-Plug 'scrooloose/nerdtree'                 " File tree browser
-Plug 'vim-airline/vim-airline'             " Status bar
-Plug 'vim-airline/vim-airline-themes'      " Staus bar theme
-Plug 'ntpeters/vim-better-whitespace'      " White space trimming etc.
-Plug 'Raimondi/delimitMate'                " Auto closing of quotes, parens etc.
-Plug 'godlygeek/tabular'                   " Code alignment/tabularization
-Plug 'tpope/vim-surround'                  " Quoting/parenthesizing commands
-Plug 'tpope/vim-repeat'                    " Better '.' repeating
-Plug 'junegunn/goyo.vim'                   " Disables certain plugins for distraction-free editing zen
-Plug 'ctrlpvim/ctrlp.vim'                  " Fuzzy finder
-Plug 'bagrat/vim-workspace'                " Session management
-Plug 'ryanoasis/vim-devicons'              " File type glyphs/icons for NERDTree and friends
-                                           " NOTE: must come after ctrlp
-Plug 'mileszs/ack.vim'                     " Better(?) grep
-Plug 'majutsushi/tagbar'                   " Code outline
-"Plug 'ludovicchabant/vim-gutentags'        " Tag management
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 
-" Colours
-Plug 'NLKNguyen/papercolor-theme'          " Material-inspired colour scheme
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 
-" Git
-Plug 'tpope/vim-fugitive'                  " Git commands
-Plug 'christoomey/vim-conflicted'          " Merge conflict resolution
-Plug 'airblade/vim-gitgutter'              " Gutter signs for git diff
+Plug 'sheerun/vim-polyglot'
+Plug 'w0rp/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'godlygeek/tabular'
+Plug 'itchyny/lightline.vim'
 
-" Languages/Syntax
-Plug 'neovimhaskell/haskell-vim',          { 'for': 'haskell'        }
-Plug 'ndmitchell/ghcid',                   { 'rtp': 'plugins/nvim'   }
-Plug 'Twinside/vim-hoogle',                { 'for': 'haskell'        }
-Plug 'rust-lang/rust.vim',                 { 'for': 'rust'           }
-Plug 'racer-rust/vim-racer',               { 'for': 'rust'           }
-Plug 'purescript-contrib/purescript-vim',  { 'for': 'purescript'     }
-Plug 'frigoeu/psc-ide-vim',                { 'for': 'purescript'     }
-Plug 'vim-syntastic/syntastic',            { 'for': 'purescript'     }
-Plug 'elmcast/elm-vim',                    { 'for': 'elm'            }
-Plug 'w0rp/ale',                           { 'for': ['elm', 'idris'] }
-Plug 'idris-hackers/idris-vim',            { 'for': 'idris'          }
-Plug 'LnL7/vim-nix',                       { 'for': 'nix'            }
-Plug 'klen/python-mode',                   { 'for': 'python'         }
-Plug 'mattn/emmet-vim',                    { 'for': 'html'           }
-Plug 'moll/vim-node',                      { 'for': 'javascript'     }
-Plug 'dart-lang/dart-vim-plugin',          { 'for': 'dart'           }
-Plug 'ekalinin/Dockerfile.vim',            { 'for': 'Dockerfile'     }
-Plug 'cespare/vim-toml',                   { 'for': 'toml'           }
-Plug 'maralla/vim-toml-enhance',           { 'for': 'toml'           }
+Plug 'NLKNguyen/papercolor-theme'
 
-" Language Server Protocol (LSP)
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'make release' }
-Plug 'junegunn/fzf'    " (Optional) multi-entry selection UI
+call plug#end()
 
-" Recyling bin
-"Plug 'tpope/vim-unimpaired'
-"Plug 'euclio/gitignore.vim'
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'tyru/open-browser.vim'
-"Plug 'tyru/open-browser-github.vim'
 
-call plug#end()  " TODO: maybe use less plugins...
+"     junegunn/fzf.vim
 
-" Disable gutentags if ctags isn't available
-if !executable('ctags')
-    let g:gutentags_dont_load = 1
-endif
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" Source all .vim files under init/
-for fpath in split(globpath('~/.config/nvim/init/**', '*.vim'), '\n')
-    execute 'source' fpath
-endfor
 
-endif
+"     w0rp/ale
+
+" https://github.com/w0rp/ale/blob/master/supported-tools.md
+" https://github.com/w0rp/ale/tree/master/ale_linters
+let b:ale_linters = {
+\   'sh': ['shellcheck'],
+\   'nix': ['nix'],
+\   'make': ['checkmake'],
+\   'idris': ['idris'],
+\   'go': ['go'],
+\   'elm': ['elm'],
+\}
+let g:ale_linters_explicit = 1  " only use the above linters
+
+" https://github.com/w0rp/ale/blob/master/autoload/ale/fix/registry.vim
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'elm': ['elm-format'],
+\   'go': ['gofmt'],
+\   'sh': ['shfmt'],
+\   'javascript': ['prettier'],
+\   'json': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'less': ['prettier'],
+\   'markdown': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_set_highlights = 0  " don't highlight
+
+
+"     itchyny/lightline.vim
+
+let g:lightline = {
+\   'colorscheme': 'one',
+\   'active': {
+\       'left': [
+\           [ 'mode', 'paste' ],
+\           [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+\       ]
+\   },
+\   'component_function': {
+\       'gitbranch': 'fugitive#head'
+\   },
+\}
+
+
+"     NLKNguyen/papercolor-theme
+
+" Use the terminal's background color
+" NOTE: must come before `colorscheme PaperColor`
+let g:PaperColor_Theme_Options = {'theme': {'default.dark': { 'transparent_background': 1 } } }
+colorscheme PaperColor
+set background=dark
