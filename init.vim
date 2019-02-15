@@ -210,7 +210,7 @@ let g:ale_set_highlights = 0  " don't highlight
 "     itchyny/lightline.vim
 
 let g:lightline = {
-\   'colorscheme': 'one',
+\   'colorscheme': 'powerline',
 \   'active': {
 \       'left': [
 \           [ 'mode', 'paste' ],
