@@ -113,6 +113,9 @@ nnoremap <c-down>  :resize -2<CR>
 nnoremap <c-left>  :vertical resize -2<CR>
 nnoremap <c-right> :vertical resize +2<CR>
 
+" Exit terminal mode naturally
+tnoremap <Esc> <C-\><C-n>
+
 
 " PLUGINS ======================================================================
 " https://twitter.com/mjackson/status/1073618826141396992
