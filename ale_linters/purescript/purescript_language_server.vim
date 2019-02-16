@@ -12,7 +12,7 @@ function! ale_linters#purescript#purescript_language_server#GetCommand(buffer) a
 endfunction
 
 function! ale_linters#purescript#purescript_language_server#GetProjectRoot(buffer) abort
-    let l:package_json = ale#path#FindNearestFile(a:buffer, 'package.json')
+    let l:package_json = ale#path#FindNearestFile(a:buffer, 'psc-package.json')
     let l:bower_json = ale#path#FindNearestFile(a:buffer, 'bower.json')
 
     if !empty(l:package_json)
@@ -24,6 +24,7 @@ function! ale_linters#purescript#purescript_language_server#GetProjectRoot(buffe
     else
         " ¯\_(ツ)_/¯   In this case the linter won't work!
         return ''
+    endif
 endfunction
 
 call ale#linter#Define('purescript', {
