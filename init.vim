@@ -144,6 +144,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'vmchale/dhall-vim'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
@@ -211,6 +212,7 @@ let g:ale_fixers = {
 \   'elm': ['elm-format'],
 \   'go': ['gofmt'],
 \   'sh': ['shfmt'],
+\   'dhall': ['DhallFormat'],
 \   'javascript': ['prettier'],
 \   'json': ['prettier'],
 \   'css': ['prettier'],
@@ -227,8 +229,13 @@ let g:ale_set_highlights = 0  " don't highlight
 " https://github.com/rust-lang/rls/issues/1011#issuecomment-456498046
 let g:ale_rust_rls_toolchain = 'nightly-2019-01-15'
 
+" Some nice LSP mappings
 nnoremap <silent> gd :ALEGoToDefinition<cr>
 nnoremap <silent> K  :ALEHover<cr>
+
+function! DhallFormat(buffer) abort
+    return { 'command': 'dhall format' }
+endfunction
 
 
 " itchyny/lightline.vim
