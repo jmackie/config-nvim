@@ -197,14 +197,17 @@ let g:ale_linters = {
 \   'nix': ['nix'],
 \   'make': ['checkmake'],
 \   'idris': ['idris'],
-\   'go': ['go'],
+\   'purescript': ['purescript-language-server'],
+\   'rust': ['rls'],
 \   'elm': ['elm'],
+\   'go': ['go'],
 \}
 let g:ale_linters_explicit = 1  " only use the above linters
 
 " https://github.com/w0rp/ale/blob/master/autoload/ale/fix/registry.vim
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'rust': ['rustfmt'],
 \   'elm': ['elm-format'],
 \   'go': ['gofmt'],
 \   'sh': ['shfmt'],
@@ -220,6 +223,12 @@ let g:ale_fix_on_save = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_set_highlights = 0  " don't highlight
+
+" https://github.com/rust-lang/rls/issues/1011#issuecomment-456498046
+let g:ale_rust_rls_toolchain = 'nightly-2019-01-15'
+
+nnoremap <silent> gd :ALEGoToDefinition<cr>
+nnoremap <silent> K  :ALEHover<cr>
 
 
 " itchyny/lightline.vim
