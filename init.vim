@@ -197,6 +197,7 @@ let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'nix': ['nix'],
 \   'make': ['checkmake'],
+\   'haskell': ['hlint'],
 \   'idris': ['idris'],
 \   'purescript': ['purescript-language-server'],
 \   'rust': ['rls'],
