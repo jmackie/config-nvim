@@ -133,6 +133,10 @@ endif
 " Load all the plugins
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'sheerun/vim-polyglot'
+Plug 'vmchale/dhall-vim'
+Plug 'idris-hackers/idris-vim'
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -141,10 +145,7 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
-Plug 'vmchale/dhall-vim'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
