@@ -192,7 +192,7 @@ nmap <c-p> :Files<cr>
 " --------
 " https://github.com/w0rp/ale/blob/master/supported-tools.md
 " https://github.com/w0rp/ale/tree/master/ale_linters
-let b:ale_linters = {
+let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'nix': ['nix'],
 \   'make': ['checkmake'],
