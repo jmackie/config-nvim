@@ -205,7 +205,13 @@ let g:ale_linters = {
 \   'elm': ['elm'],
 \   'go': ['go'],
 \}
-let g:ale_linters_explicit = 1  " only use the above linters
+" Only use the above linters
+let g:ale_linters_explicit = 1
+
+" Lint on save
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
 
 " https://github.com/w0rp/ale/blob/master/autoload/ale/fix/registry.vim
 let g:ale_fixers = {
