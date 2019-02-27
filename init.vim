@@ -203,7 +203,7 @@ let g:ale_linters = {
 \   'purescript': ['purescript-language-server'],
 \   'rust': ['rls'],
 \   'elm': ['elm'],
-\   'go': ['go'],
+\   'go': ['gobuild'],
 \}
 " Only use the above linters
 let g:ale_linters_explicit = 1
