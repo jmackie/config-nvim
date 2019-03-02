@@ -187,7 +187,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " ctrlp habit...
-nmap <c-p> :Files<cr>
+nmap <c-p> :GitFiles<cr>
 
 
 " w0rp/ale
