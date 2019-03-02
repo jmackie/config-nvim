@@ -218,7 +218,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'rust': ['rustfmt'],
 \   'elm': ['elm-format'],
-\   'go': ['gofmt'],
+\   'go': ['goimports'],
 \   'sh': ['shfmt'],
 \   'dhall': ['DhallFormat'],
 \   'javascript': ['prettier'],
