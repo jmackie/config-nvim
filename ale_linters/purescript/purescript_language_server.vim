@@ -12,10 +12,14 @@ function! ale_linters#purescript#purescript_language_server#GetCommand(buffer) a
 endfunction
 
 function! ale_linters#purescript#purescript_language_server#GetProjectRoot(buffer) abort
+    let l:spago_dhall = ale#path#FindNearestFile(a:buffer, 'spago.dhall')
     let l:package_json = ale#path#FindNearestFile(a:buffer, 'psc-package.json')
     let l:bower_json = ale#path#FindNearestFile(a:buffer, 'bower.json')
-
-    if !empty(l:package_json)
+    
+    if !empty(l:spago_dhall)
+        " spago project
+        return fnamemodify(l:spago_dhall, ':h')
+    elseif !empty(l:package_json)
         " psc-package project
         return fnamemodify(l:package_json, ':h')
     elseif !empty(l:bower_json)
