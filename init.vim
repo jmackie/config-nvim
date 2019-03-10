@@ -202,6 +202,7 @@ let g:ale_linters = {
 \   'idris': ['idris'],
 \   'purescript': ['purescript-language-server'],
 \   'rust': ['rls'],
+\   'racket': ['raco'],
 \   'elm': ['elm'],
 \   'go': ['gobuild'],
 \}
