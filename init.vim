@@ -67,6 +67,13 @@ command! SpellDisable setlocal nospell
 
 command Dunno :normal i¯\_(ツ)_/¯<esc>
 
+command! Ghcid call termopen("ghcid")
+
+augroup TerminalStuff
+    au!
+    autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
+
 
 " MAPPINGS =====================================================================
 
