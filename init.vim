@@ -67,8 +67,6 @@ command! SpellDisable setlocal nospell
 
 command Dunno :normal i¯\_(ツ)_/¯<esc>
 
-command! Ghcid call termopen("ghcid")
-
 augroup TerminalStuff
     au!
     autocmd TermOpen * setlocal nonumber norelativenumber
@@ -158,6 +156,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 
 Plug 'NLKNguyen/papercolor-theme'
 
