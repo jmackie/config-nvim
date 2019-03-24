@@ -21,7 +21,8 @@ set nofoldenable               " Disable code folding
 set clipboard+=unnamedplus     " Use system clipboard for yanks
 set termguicolors              " Enable 24-bit color
 set textwidth=80               " Wrap text at 80 characters...
-set nowrap                     " ...but only if I say so
+set formatoptions-=t           " ...but only if I say so
+set nowrap                     " Don't visually wrap
 set updatetime=100             " Suggested by gitgutter
 set backupcopy=yes             " Play nice with file watchers
 
