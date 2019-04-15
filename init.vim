@@ -237,6 +237,7 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'less': ['prettier'],
 \   'markdown': ['prettier'],
+\   'bzl': ['Buildifier'],
 \}
 let g:ale_fix_on_save = 1
 
@@ -253,6 +254,14 @@ nnoremap <silent> K  :ALEHover<cr>
 
 function! DhallFormat(buffer) abort
     return { 'command': 'dhall format' }
+endfunction
+
+function! Floskell(buffer) abort
+    return { 'command': 'floskell' }
+endfunction
+
+function! Buildifier(buffer) abort
+    return { 'command': 'buildifier' }
 endfunction
 
 
