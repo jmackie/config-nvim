@@ -238,6 +238,7 @@ let g:ale_fixers = {
 \   'less': ['prettier'],
 \   'markdown': ['prettier'],
 \   'bzl': ['Buildifier'],
+\   'dune': ['DuneFormat'],
 \}
 let g:ale_fix_on_save = 1
 
@@ -264,6 +265,11 @@ function! Buildifier(buffer) abort
     return { 'command': 'buildifier' }
 endfunction
 
+function! DuneFormat(buffer) abort
+    return { 'command': 'dune format-dune-file' }
+endfunction
+
+au BufNewFile,BufRead dune setf dune
 
 " itchyny/lightline.vim
 " ---------------------
