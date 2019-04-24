@@ -296,3 +296,8 @@ let g:lightline = {
 let g:PaperColor_Theme_Options = {'theme': {'default.dark': { 'transparent_background': 1 } } }
 colorscheme PaperColor
 set background=dark
+
+
+" Hacky solution for now
+" https://github.com/ocaml/merlin/wiki/vim-from-scratch
+set rtp+=/nix/store/yswgrgzq9sx3i5m77kd6206m9pkxdr8s-ocaml4.06.1-merlin-3.2.2/share/merlin/vim/
