@@ -158,6 +158,7 @@ Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plug 'reasonml-editor/vim-reason-plus'
 
 Plug 'NLKNguyen/papercolor-theme'
 
@@ -210,6 +211,7 @@ let g:ale_linters = {
 \   'purescript': ['purescript-language-server'],
 \   'rust': ['rls'],
 \   'ocaml': ['ols'],
+\   'reason': ['ols'],
 \   'racket': ['raco'],
 \   'elm': ['elm'],
 \   'go': ['gobuild'],
@@ -231,6 +233,7 @@ let g:ale_fixers = {
 \   'sh': ['shfmt'],
 \   'dhall': ['DhallFormat'],
 \   'ocaml': ['ocamlformat'],
+\   'reason': ['refmt'],
 \   'javascript': ['prettier'],
 \   'json': ['prettier'],
 \   'css': ['prettier'],
