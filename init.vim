@@ -210,7 +210,7 @@ let g:ale_linters = {
 \   'idris': ['idris'],
 \   'purescript': ['purescript-language-server'],
 \   'rust': ['rls'],
-\   'ocaml': ['ols'],
+\   'ocaml': ['merlin-lsp'],
 \   'reason': ['ols'],
 \   'racket': ['raco'],
 \   'elm': ['elm'],
