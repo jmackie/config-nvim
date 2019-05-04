@@ -250,7 +250,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_set_highlights = 0  " don't highlight
 
 " https://github.com/rust-lang/rls/issues/1011#issuecomment-456498046
-let g:ale_rust_rls_toolchain = 'nightly-2019-01-15'
+"let g:ale_rust_rls_toolchain = 'nightly'
 
 " Some nice LSP mappings
 nnoremap <silent> gd :ALEGoToDefinition<cr>
