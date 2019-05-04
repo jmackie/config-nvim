@@ -255,6 +255,7 @@ let g:ale_set_highlights = 0  " don't highlight
 " Some nice LSP mappings
 nnoremap <silent> gd :ALEGoToDefinition<cr>
 nnoremap <silent> K  :ALEHover<cr>
+nnoremap <silent> ?  :ALEDetail<cr>
 
 function! DhallFormat(buffer) abort
     return { 'command': 'dhall format' }
