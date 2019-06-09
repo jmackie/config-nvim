@@ -275,6 +275,11 @@ endfunction
 
 au BufNewFile,BufRead dune setf dune
 
+" More silly javascript filetype mappings
+au BufNewFile,BufRead .babelrc setf json
+au BufNewFile,BufRead .eslintrc setf json
+au BufNewFile,BufRead .prettierrc setf json
+
 " itchyny/lightline.vim
 " ---------------------
 let g:lightline = {
