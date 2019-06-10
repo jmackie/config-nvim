@@ -275,6 +275,10 @@ endfunction
 
 au BufNewFile,BufRead dune setf dune
 
+function! Purty(buffer) abort
+    return { 'command': 'purty %t' }
+endfunction
+
 " More silly javascript filetype mappings
 au BufNewFile,BufRead .babelrc setf json
 au BufNewFile,BufRead .eslintrc setf json
