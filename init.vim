@@ -235,6 +235,7 @@ let g:ale_fixers = {
 \   'ocaml': ['ocamlformat'],
 \   'reason': ['refmt'],
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'json': ['prettier'],
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
