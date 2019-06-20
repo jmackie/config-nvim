@@ -213,7 +213,7 @@ let g:ale_linters = {
 \   'ocaml': ['merlin-lsp'],
 \   'reason': ['ols'],
 \   'racket': ['raco'],
-\   'elm': ['elm'],
+\   'elm': ['make'],
 \   'go': ['gobuild'],
 \}
 " Only use the above linters
