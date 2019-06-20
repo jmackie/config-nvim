@@ -241,6 +241,7 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'less': ['prettier'],
 \   'markdown': ['prettier'],
+\   'yaml': ['prettier'],
 \   'bzl': ['Buildifier'],
 \   'dune': ['DuneFormat'],
 \}
