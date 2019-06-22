@@ -232,6 +232,7 @@ let g:ale_fixers = {
 \   'go': ['goimports'],
 \   'sh': ['shfmt'],
 \   'dhall': ['DhallFormat'],
+\   'haskell': ['stylish-haskell'],
 \   'ocaml': ['ocamlformat'],
 \   'reason': ['refmt'],
 \   'javascript': ['prettier'],
