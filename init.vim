@@ -56,6 +56,10 @@ set diffopt=filler,vertical
 let mapleader      = ','
 let maplocalleader = ','
 
+" netrw stuff
+let g:netrw_dirhistmax = 0
+let g:netrw_liststyle = 3
+nmap <leader>e :Explore<CR>
 
 " COMMANDS =====================================================================
 
@@ -96,9 +100,6 @@ imap <c-s> <Esc>:w<CR>
 
 " Ctrl+b makes
 map <c-b> :make<CR>
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Visual mode '*' searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -147,11 +148,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
@@ -163,25 +164,6 @@ Plug 'reasonml-editor/vim-reason-plus'
 Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
-
-
-" scrooloose/nerdtree
-" -------------------
-map  <c-n>     :NERDTreeToggle<cr>
-nmap <leader>n :NERDTreeFind<cr>
-
-let g:NERDTreeWinPos = 'left'
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeWinSize = 35
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeIgnore = ['\.git$']
-let g:NERDTreeRespectWildIgnore = 1
-
-" Close vim if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 
 " junegunn/fzf.vim
 " ----------------
@@ -245,6 +227,7 @@ let g:ale_fixers = {
 \   'yaml': ['prettier'],
 \   'bzl': ['Buildifier'],
 \   'dune': ['DuneFormat'],
+\   'terraform': ['terraform'],
 \}
 let g:ale_fix_on_save = 1
 
@@ -291,6 +274,11 @@ au BufNewFile,BufRead .prettierrc setf json
 " ---------------------
 let g:lightline = {
 \   'colorscheme': 'powerline',
+\   'inactive': {
+\       'left': [
+\           [ 'absolutepath' ]
+\       ]
+\   },
 \   'active': {
 \       'left': [
 \           [ 'mode', 'paste' ],
