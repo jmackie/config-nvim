@@ -58,8 +58,7 @@ let maplocalleader = ','
 
 " netrw stuff
 let g:netrw_dirhistmax = 0
-let g:netrw_liststyle = 3
-nmap <leader>e :Explore<CR>
+let g:netrw_liststyle  = 3
 
 " COMMANDS =====================================================================
 
@@ -148,11 +147,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
@@ -178,6 +177,24 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " ctrlp habit...
 nmap <c-p> :GitFiles<cr>
+
+
+" scrooloose/nerdtree
+" -------------------
+map  <c-n>     :NERDTreeToggle<cr>
+nmap <leader>n :NERDTreeFind<cr>
+
+let g:NERDTreeWinPos = 'left'
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeWinSize = 35
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeIgnore = ['\.git$']
+let g:NERDTreeRespectWildIgnore = 1
+
+" Close vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 " w0rp/ale
