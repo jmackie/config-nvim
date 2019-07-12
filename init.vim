@@ -261,7 +261,7 @@ nnoremap <silent> K  :ALEHover<cr>
 nnoremap <silent> ?  :ALEDetail<cr>
 
 function! DhallFormat(buffer) abort
-    return { 'command': 'dhall format' }
+    return { 'command': 'dhall --ascii format' }
 endfunction
 
 function! Floskell(buffer) abort
