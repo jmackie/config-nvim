@@ -122,6 +122,17 @@ nnoremap <c-right> :vertical resize +2<CR>
 " Exit terminal mode naturally
 tnoremap <Esc> <C-\><C-n>
 
+" https://github.com/kcsongor/vim-hs
+function! Haskell_add_language_pragma()
+  let line = max([0, search('^{-# LANGUAGE', 'n') - 1])
+  :call fzf#run({
+  \ 'source': 'ghc --supported-languages',
+  \ 'sink': {lp -> append(line, "{-# LANGUAGE " . lp . " #-}")},
+  \ 'options': '--multi --ansi --reverse --prompt "LANGUAGE> "',
+  \ 'down': '25%'})
+endfunction
+
+command LE :call Haskell_add_language_pragma()
 
 " PLUGINS ======================================================================
 " https://twitter.com/mjackson/status/1073618826141396992
