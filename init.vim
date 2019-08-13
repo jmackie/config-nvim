@@ -293,6 +293,10 @@ function! Purty(buffer) abort
     return { 'command': 'purty %t' }
 endfunction
 
+function! Nixfmt(buffer) abort
+    return { 'command': 'nixfmt' }
+endfunction
+
 " More silly javascript filetype mappings
 au BufNewFile,BufRead .babelrc setf json
 au BufNewFile,BufRead .eslintrc setf json
