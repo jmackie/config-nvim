@@ -76,6 +76,8 @@ augroup TerminalStuff
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
+command TemplateAle :r ~/.config/nvim/templates/ale.vim 
+command TemplateHtml :r ~/.config/nvim/templates/index.html
 
 " MAPPINGS =====================================================================
 
@@ -210,23 +212,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " w0rp/ale
 " --------
-" https://github.com/w0rp/ale/blob/master/supported-tools.md
-" https://github.com/w0rp/ale/tree/master/ale_linters
-let g:ale_linters = {
-\   'sh': ['shellcheck'],
-\   'nix': ['nix'],
-\   'make': ['checkmake'],
-\   'haskell': ['hlint'],
-\   'idris': ['idris'],
-\   'purescript': ['purescript-language-server'],
-\   'rust': ['rls'],
-\   'ocaml': ['merlin-lsp'],
-\   'reason': ['ols'],
-\   'racket': ['raco'],
-\   'elm': ['make'],
-\   'go': ['gobuild'],
-\}
-" Only use the above linters
+" Only use explicitly declared users
 let g:ale_linters_explicit = 1
 
 " Lint on save
@@ -234,29 +220,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 
-" https://github.com/w0rp/ale/blob/master/autoload/ale/fix/registry.vim
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'rust': ['rustfmt'],
-\   'elm': ['elm-format'],
-\   'go': ['goimports'],
-\   'sh': ['shfmt'],
-\   'dhall': ['DhallFormat'],
-\   'haskell': ['stylish-haskell'],
-\   'ocaml': ['ocamlformat'],
-\   'reason': ['refmt'],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'json': ['prettier'],
-\   'css': ['prettier'],
-\   'scss': ['prettier'],
-\   'less': ['prettier'],
-\   'markdown': ['prettier'],
-\   'yaml': ['prettier'],
-\   'bzl': ['Buildifier'],
-\   'dune': ['DuneFormat'],
-\   'terraform': ['terraform'],
-\}
+" Format on save
 let g:ale_fix_on_save = 1
 
 let g:ale_sign_error = '✘'
