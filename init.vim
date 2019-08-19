@@ -212,6 +212,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " w0rp/ale
 " --------
+
+let g:ale_linters = {
+\   'sh': ['shellcheck'],
+\   'nix': ['nix'],
+\}
+
 " Only use explicitly declared users
 let g:ale_linters_explicit = 1
 
