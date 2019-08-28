@@ -218,7 +218,7 @@ let g:ale_linters = {
 \   'nix': ['nix'],
 \}
 
-" Only use explicitly declared users
+" Only use explicitly declared linters
 let g:ale_linters_explicit = 1
 
 " Lint on save
