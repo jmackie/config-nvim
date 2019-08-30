@@ -274,6 +274,8 @@ let g:LanguageClient_serverCommands = {
 \ 'purescript': ['purescript-language-server'],
 \}
 
+let g:LanguageClient_loadSettings = 0
+
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
