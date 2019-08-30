@@ -76,7 +76,7 @@ augroup TerminalStuff
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
-command TemplateAle :r ~/.config/nvim/templates/ale.vim 
+command TemplateAle :r ~/.config/nvim/templates/ale.vim
 command TemplateHtml :r ~/.config/nvim/templates/index.html
 
 " MAPPINGS =====================================================================
@@ -166,6 +166,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
@@ -223,7 +224,7 @@ let g:ale_linters_explicit = 1
 
 " Lint on save
 let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 
 " Format on save
@@ -232,14 +233,6 @@ let g:ale_fix_on_save = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_set_highlights = 0  " don't highlight
-
-" https://github.com/rust-lang/rls/issues/1011#issuecomment-456498046
-"let g:ale_rust_rls_toolchain = 'nightly'
-
-" Some nice LSP mappings
-nnoremap <silent> gd :ALEGoToDefinition<cr>
-nnoremap <silent> K  :ALEHover<cr>
-nnoremap <silent> ?  :ALEDetail<cr>
 
 function! DhallFormat(buffer) abort
     return { 'command': 'dhall --ascii format' }
@@ -271,6 +264,19 @@ endfunction
 au BufNewFile,BufRead .babelrc setf json
 au BufNewFile,BufRead .eslintrc setf json
 au BufNewFile,BufRead .prettierrc setf json
+
+
+" autozimu/LanguageClient-neovim
+" -----------------------------
+
+let g:LanguageClient_serverCommands = {
+\ 'reason': ['reason-language-server'],
+\ 'purescript': ['purescript-language-server'],
+\}
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
 
 " itchyny/lightline.vim
 " ---------------------
