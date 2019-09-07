@@ -11,7 +11,8 @@ set colorcolumn=80             " Ruler at 80 chars
 set cursorline                 " Highlight the current line
 set history=200                " Remember a lot of stuff
 set ruler                      " Always show info along bottom
-set cmdheight=1                " Set height of the command bar
+set cmdheight=2                " Set height of the command bar
+set signcolumn=yes             " Always draw the sign column 
 set scrolloff=7                " Some lines around scroll for context
 set autoread                   " Auto-reload files changed on disk
 set noswapfile                 " Disable swap files
@@ -173,6 +174,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'Shougo/echodoc.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
 
@@ -213,7 +215,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " w0rp/ale
 " --------
-
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'nix': ['nix'],
@@ -268,7 +269,6 @@ au BufNewFile,BufRead .prettierrc setf json
 
 " autozimu/LanguageClient-neovim
 " -----------------------------
-
 let g:LanguageClient_serverCommands = {
 \ 'reason': ['reason-language-server'],
 \ 'purescript': ['purescript-language-server'],
@@ -278,6 +278,8 @@ let g:LanguageClient_loadSettings = 0
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+"https://github.com/autozimu/LanguageClient-neovim/wiki/Recommended-Settings
 
 
 " itchyny/lightline.vim
@@ -301,6 +303,12 @@ let g:lightline = {
 \   'separator': { 'left': '', 'right': '' },
 \   'subseparator': { 'left': '', 'right': '' },
 \}
+
+
+" Shougo/echodoc.vim
+" ------------------
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'signature'
 
 
 " NLKNguyen/papercolor-theme
