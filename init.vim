@@ -167,14 +167,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'Shougo/echodoc.vim'
 
 Plug 'NLKNguyen/papercolor-theme'
 
@@ -235,6 +233,14 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_set_highlights = 0  " don't highlight
 
+" https://github.com/rust-lang/rls/issues/1011#issuecomment-456498046
+"let g:ale_rust_rls_toolchain = 'nightly'
+
+" Some nice LSP mappings
+nnoremap <silent> gd :ALEGoToDefinition<cr>
+nnoremap <silent> K  :ALEHover<cr>
+nnoremap <silent> ?  :ALEDetail<cr>
+
 function! DhallFormat(buffer) abort
     return { 'command': 'dhall --ascii format' }
 endfunction
@@ -267,21 +273,6 @@ au BufNewFile,BufRead .eslintrc setf json
 au BufNewFile,BufRead .prettierrc setf json
 
 
-" autozimu/LanguageClient-neovim
-" -----------------------------
-let g:LanguageClient_serverCommands = {
-\ 'reason': ['reason-language-server'],
-\ 'purescript': ['purescript-language-server'],
-\}
-
-let g:LanguageClient_loadSettings = 0
-
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-
-"https://github.com/autozimu/LanguageClient-neovim/wiki/Recommended-Settings
-
-
 " itchyny/lightline.vim
 " ---------------------
 let g:lightline = {
@@ -303,12 +294,6 @@ let g:lightline = {
 \   'separator': { 'left': '', 'right': '' },
 \   'subseparator': { 'left': '', 'right': '' },
 \}
-
-
-" Shougo/echodoc.vim
-" ------------------
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'signature'
 
 
 " NLKNguyen/papercolor-theme
