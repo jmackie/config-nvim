@@ -77,8 +77,13 @@ augroup TerminalStuff
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
-command TemplateAle :r ~/.config/nvim/templates/ale.vim
-command TemplateHtml :r ~/.config/nvim/templates/index.html
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/skeleton.sh
+    autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
+    autocmd BufNewFile .nvimrc 0r ~/.config/nvim/templates/skeleton.nvimrc
+  augroup END
+endif
 
 " MAPPINGS =====================================================================
 
