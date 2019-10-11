@@ -178,6 +178,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'Twinside/vim-haskellFold'
 
 Plug 'NLKNguyen/papercolor-theme'
 
