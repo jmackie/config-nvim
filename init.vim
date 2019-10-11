@@ -18,7 +18,8 @@ set autoread                   " Auto-reload files changed on disk
 set noswapfile                 " Disable swap files
 set updatecount=0              " Disable swap files
 set wildmode=longest,list,full " :e completion mode
-set nofoldenable               " Disable code folding
+set foldmethod=marker          " fold code between a marker
+set foldmarker={{{,}}}         " fold code between triple braces
 set clipboard+=unnamedplus     " Use system clipboard for yanks
 set termguicolors              " Enable 24-bit color
 set textwidth=80               " Wrap text at 80 characters...
@@ -178,7 +179,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'Twinside/vim-haskellFold'
 
 Plug 'NLKNguyen/papercolor-theme'
 
