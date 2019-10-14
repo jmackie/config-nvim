@@ -62,6 +62,11 @@ let maplocalleader = ','
 let g:netrw_dirhistmax = 0
 let g:netrw_liststyle  = 3
 
+" Stop syntax highlighting from breaking when scrolling a file 
+" with long multiline string literals.
+" https://vim.fandom.com/wiki/Fix_syntax_highlighting
+autocmd BufEnter * :syntax sync fromstart
+
 " COMMANDS =====================================================================
 
 " :T creates a new terminal split (VT for a vertical split)
