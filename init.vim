@@ -90,7 +90,8 @@ if has("autocmd")
     autocmd BufNewFile webpack.config.js 0r ~/.config/nvim/templates/skeleton.webpack.config.js
     autocmd BufNewFile .nvimrc 0r ~/.config/nvim/templates/skeleton.nvimrc
     autocmd BufNewFile *.cabal 0r ~/.config/nvim/templates/skeleton.cabal
-    autocmd BufNewFile Main.elm 0r ~/.config/nvim/templates/skeleton.elm
+    autocmd BufNewFile Main.elm 0r ~/.config/nvim/templates/skeleton.Main.elm
+    autocmd BufNewFile *.nix 0r ~/.config/nvim/templates/skeleton.nix
   augroup END
 endif
 
