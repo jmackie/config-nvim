@@ -228,6 +228,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " w0rp/ale
 " --------
+
+" Enable minimal linters by default, 
+" prefer to set on a project-by-project basis
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'nix': ['nix'],
@@ -252,9 +255,12 @@ let g:ale_set_highlights = 0  " don't highlight
 "let g:ale_rust_rls_toolchain = 'nightly'
 
 " Some nice LSP mappings
-nnoremap <silent> gd :ALEGoToDefinition<cr>
+nnoremap <silent> gd :split<cr> :ALEGoToDefinition<cr>
 nnoremap <silent> K  :ALEHover<cr>
 nnoremap <silent> ?  :ALEDetail<cr>
+
+" Autocompletion
+set omnifunc=ale#completion#OmniFunc
 
 function! DhallFormat(buffer) abort
     return { 'command': 'dhall --ascii format' }
