@@ -92,6 +92,7 @@ if has("autocmd")
     autocmd BufNewFile *.cabal 0r ~/.config/nvim/templates/skeleton.cabal
     autocmd BufNewFile Main.elm 0r ~/.config/nvim/templates/skeleton.Main.elm
     autocmd BufNewFile *.nix 0r ~/.config/nvim/templates/skeleton.nix
+    autocmd BufNewFile tsconfig.json 0r ~/.config/nvim/templates/skeleton.tsconfig.json
   augroup END
 endif
 
