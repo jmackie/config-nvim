@@ -165,6 +165,9 @@ if empty(glob("~/.config/nvim/autoload/plug.vim"))
     source $MYVIMRC
 endif
 
+" This setting must be set before ALE is loaded
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
 
 " Load all the plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -259,9 +262,6 @@ let g:ale_set_highlights = 0  " don't highlight
 nnoremap <silent> gd :split<cr> :ALEGoToDefinition<cr>
 nnoremap <silent> K  :ALEHover<cr>
 nnoremap <silent> ?  :ALEDetail<cr>
-
-" Autocompletion
-set omnifunc=ale#completion#OmniFunc
 
 function! DhallFormat(buffer) abort
     return { 'command': 'dhall --ascii format' }
