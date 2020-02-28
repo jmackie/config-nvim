@@ -165,16 +165,8 @@ if empty(glob("~/.config/nvim/autoload/plug.vim"))
     source $MYVIMRC
 endif
 
-" This setting must be set before ALE is loaded
-let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc
-
 " Load all the plugins
 call plug#begin('~/.config/nvim/plugged')
-
-Plug 'sheerun/vim-polyglot'
-Plug 'vmchale/dhall-vim'
-Plug 'idris-hackers/idris-vim'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -182,6 +174,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 
+Plug 'sheerun/vim-polyglot'
+Plug 'vmchale/dhall-vim'
+Plug 'idris-hackers/idris-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -293,6 +289,16 @@ endfunction
 au BufNewFile,BufRead .babelrc setf json
 au BufNewFile,BufRead .eslintrc setf json
 au BufNewFile,BufRead .prettierrc setf json
+
+
+" Shougo/deoplete.nvim
+" ---------------------
+let g:deoplete#enable_at_startup = 1
+
+" Use ALE as the completion source for all code
+call deoplete#custom#option('sources', {
+\ '_': ['ale'],
+\})
 
 
 " itchyny/lightline.vim
