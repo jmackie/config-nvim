@@ -196,6 +196,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'NLKNguyen/papercolor-theme'
 
