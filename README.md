@@ -1,7 +1,9 @@
-# config-nvim
+# My [`neovim`](https://neovim.io) configuration
 
-My Neovim configuration
+Probably my longest lived project tbh...
 
-## System dependencies
+## Using it
 
-TODO
+```
+git clone https://github.com/jmackie/config-nvim $HOME/.config/nvim
+```
