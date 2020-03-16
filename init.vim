@@ -203,14 +203,11 @@ call plug#end()
 
 " junegunn/fzf.vim
 " ----------------
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
+" git grep wrapper
+" See: https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
+command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
+nmap <leader>gg :GGrep<cr>
 
 " ctrlp habit...
 nmap <c-p> :GitFiles<cr>
