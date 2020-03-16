@@ -146,7 +146,7 @@ nnoremap <c-right> :vertical resize +2<CR>
 tnoremap <Esc> <C-\><C-n>
 
 " Tab cycles through tabs (in normal mode!)
-nnoremap <c-up> :tabn<CR>
+nnoremap <tab> :tabn<CR>
 
 " https://github.com/kcsongor/vim-hs
 function! Haskell_add_language_pragma()
