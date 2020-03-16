@@ -145,6 +145,9 @@ nnoremap <c-right> :vertical resize +2<CR>
 " Exit terminal mode naturally
 tnoremap <Esc> <C-\><C-n>
 
+" Tab cycles through tabs (in normal mode!)
+nnoremap <c-up> :tabn<CR>
+
 " https://github.com/kcsongor/vim-hs
 function! Haskell_add_language_pragma()
   let line = max([0, search('^{-# LANGUAGE', 'n') - 1])
