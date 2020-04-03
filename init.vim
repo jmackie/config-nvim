@@ -199,6 +199,10 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'NLKNguyen/papercolor-theme'
 
+" Funky haskell syntax
+Plug 'vim-scripts/alex.vim'
+Plug 'andy-morris/happy.vim'
+
 call plug#end()
 
 " junegunn/fzf.vim
