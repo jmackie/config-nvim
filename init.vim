@@ -264,7 +264,7 @@ let g:ale_set_highlights = 0  " don't highlight
 "let g:ale_rust_rls_toolchain = 'nightly'
 
 " Some nice LSP mappings
-nnoremap <silent> gd :split<cr> :ALEGoToDefinition<cr>
+nnoremap <silent> gd :ALEGoToDefinition<cr>
 nnoremap <silent> K  :ALEHover<cr>
 nnoremap <silent> ?  :ALEDetail<cr>
 
