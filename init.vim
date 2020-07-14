@@ -12,7 +12,7 @@ set cursorline                 " Highlight the current line
 set history=200                " Remember a lot of stuff
 set ruler                      " Always show info along bottom
 set cmdheight=2                " Set height of the command bar
-set signcolumn=yes             " Always draw the sign column 
+set signcolumn=yes             " Always draw the sign column
 set scrolloff=7                " Some lines around scroll for context
 set autoread                   " Auto-reload files changed on disk
 set noswapfile                 " Disable swap files
@@ -58,7 +58,7 @@ set diffopt=filler,vertical
 let g:netrw_dirhistmax = 0
 let g:netrw_liststyle  = 3
 
-" Stop syntax highlighting from breaking when scrolling a file 
+" Stop syntax highlighting from breaking when scrolling a file
 " with long multiline string literals.
 " https://vim.fandom.com/wiki/Fix_syntax_highlighting
 autocmd BufEnter * :syntax sync fromstart
@@ -238,7 +238,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " w0rp/ale
 " --------
 
-" Enable minimal linters by default, 
+" Enable minimal linters by default,
 " prefer to set on a project-by-project basis
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
@@ -268,31 +268,7 @@ nnoremap <silent> gd :ALEGoToDefinition<cr>
 nnoremap <silent> K  :ALEHover<cr>
 nnoremap <silent> ?  :ALEDetail<cr>
 
-function! DhallFormat(buffer) abort
-    return { 'command': 'dhall --ascii format' }
-endfunction
-
-function! Floskell(buffer) abort
-    return { 'command': 'floskell' }
-endfunction
-
-function! Buildifier(buffer) abort
-    return { 'command': 'buildifier' }
-endfunction
-
-function! DuneFormat(buffer) abort
-    return { 'command': 'dune format-dune-file' }
-endfunction
-
 au BufNewFile,BufRead dune setf dune
-
-function! Purty(buffer) abort
-    return { 'command': 'purty %t' }
-endfunction
-
-function! Nixfmt(buffer) abort
-    return { 'command': 'nixfmt' }
-endfunction
 
 " More silly javascript filetype mappings
 au BufNewFile,BufRead .babelrc setf json
