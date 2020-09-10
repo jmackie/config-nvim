@@ -160,6 +160,9 @@ endfunction
 
 command LE :call Haskell_add_language_pragma()
 
+" XXX: While I develop my syntax plugin for ditto
+set rtp^=~/ditto-lang/ditto-vim
+
 " PLUGINS ======================================================================
 " https://twitter.com/mjackson/status/1073618826141396992
 " https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
@@ -197,7 +200,11 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'christoomey/vim-tmux-navigator'
 
+" Themes
+" (dark)
 Plug 'NLKNguyen/papercolor-theme'
+" (light)
+Plug 'rakr/vim-one'
 
 " Funky haskell syntax
 Plug 'vim-scripts/alex.vim'
@@ -288,8 +295,14 @@ call deoplete#custom#option('sources', {
 
 " itchyny/lightline.vim
 " ---------------------
+if $JMACKIE_THEME == 'light'
+  let s:lightline_colorscheme = 'one'
+else
+  let s:lightline_colorscheme = 'powerline'
+endif
+
 let g:lightline = {
-\   'colorscheme': 'powerline',
+\   'colorscheme': s:lightline_colorscheme,
 \   'inactive': {
 \       'left': [
 \           [ 'absolutepath' ]
@@ -309,13 +322,19 @@ let g:lightline = {
 \}
 
 
-" NLKNguyen/papercolor-theme
-" --------------------------
-" Use the terminal's background color
-" NOTE: must come before `colorscheme PaperColor`
-let g:PaperColor_Theme_Options = {'theme': {'default.dark': { 'transparent_background': 1 } } }
-colorscheme PaperColor
-set background=dark
+" Theme
+" -----
+if $JMACKIE_THEME == 'light'
+  set background=light
+  let g:one_allow_italics = 1
+  colorscheme one
+else
+  " Use the terminal's background color
+  " NOTE: must come before `colorscheme PaperColor`
+  let g:PaperColor_Theme_Options = {'theme': {'default.dark': { 'transparent_background': 1 } } }
+  set background=dark
+  colorscheme PaperColor
+endif
 
 
 " Hacky solution for now
