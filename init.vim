@@ -196,7 +196,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'christoomey/vim-tmux-navigator'
 
