@@ -126,3 +126,9 @@ else
   set background=dark
   colorscheme PaperColor
 endif
+
+
+" airblade/vim-gitgutter
+" ----------------------
+
+highlight! link SignColumn LineNr
