@@ -36,3 +36,5 @@ let g:ale_fixers = {
 "   'yaml': ['prettier'],
 "   'nix': [{buffer -> { 'command': 'nixfmt' }}],
 "   'bzl': [{buffer -> { 'command': 'buildifier' }}],
+
+"map <c-b> :make<CR>

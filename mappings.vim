@@ -16,9 +16,6 @@ map <c-space> ?
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
 
-" Ctrl+b makes
-map <c-b> :make<CR>
-
 " Visual mode '*' searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
