@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/w0rp/ale",
+  "rev": "1ec573bf0df6cbc5eef8b593f93081e4c1837c1b",
+  "date": "2020-11-05T08:37:15+09:00",
+  "path": "/nix/store/9j50s0x6l1s0w4lgg6f5rvadi2hw2w7z-ale",
+  "sha256": "0h4aa3bd0wc9hz8af66biv9gcxw1m3bvp87jnc1jp3m3qxk93knl",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

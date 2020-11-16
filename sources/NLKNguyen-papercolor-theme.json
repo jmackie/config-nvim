@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/NLKNguyen/papercolor-theme",
+  "rev": "0428fc228afc50085326bfd43746b7734e42c428",
+  "date": "2020-11-08T16:32:02-08:00",
+  "path": "/nix/store/3d2vk1ma49x76h70kqbwr5ayw3hn1cl7-papercolor-theme",
+  "sha256": "092zp0f5jvfwh2q8asxdnkrhz9djgw0lqzg70g38xk606fxy16a9",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

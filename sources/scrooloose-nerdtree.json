@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/scrooloose/nerdtree",
+  "rev": "14af89743ac1c31ff9bb43682025eda50333a7d5",
+  "date": "2020-10-14T18:08:18-04:00",
+  "path": "/nix/store/8nd8pdfph37l7xcmv5xgxby4wqs05s56-nerdtree",
+  "sha256": "1q50cc9z91v809s65w0zq2s0z5smvghy0fbdjn64mr894ndvrmcv",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

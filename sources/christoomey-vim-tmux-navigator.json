@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/christoomey/vim-tmux-navigator",
+  "rev": "6c0b5d2faa49f2059331a4004b34a916c96abcb3",
+  "date": "2020-09-29T16:57:58-04:00",
+  "path": "/nix/store/2gv8r636p6wy0qvyx505mpvhq8wgc6rx-vim-tmux-navigator",
+  "sha256": "11kq87drp0ca5rj9j34rpajbzv79wxm3k2cf249dxvi0chcl41ma",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

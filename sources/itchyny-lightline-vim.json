@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/itchyny/lightline.vim",
+  "rev": "2d482e82f2e13c6d7bad3a0aabfc44f8aba945ed",
+  "date": "2020-11-10T22:34:57+09:00",
+  "path": "/nix/store/n7hwwpss73sh61grmjl55vp124yw27mh-lightline.vim",
+  "sha256": "08l7yavkqqbw0xvy6qimqydv0zjvisl8x3z9jsyq1m4yrscx9hsr",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

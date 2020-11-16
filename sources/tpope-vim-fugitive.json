@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/tpope/vim-fugitive",
+  "rev": "1a77f1c00e12e8460f39098ec3289c5433d32512",
+  "date": "2020-10-26T20:31:54-04:00",
+  "path": "/nix/store/prk2r7fsymd1rmb82iy00djd1nmjsa4g-vim-fugitive",
+  "sha256": "14w43j0gnh10kyshikz4cl6m3f04a6hpiqasn2n71isvdd1p24kp",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

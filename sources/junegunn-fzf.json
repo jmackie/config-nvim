@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/junegunn/fzf",
+  "rev": "722d66e85abde02518214edd1ab186d321c0170c",
+  "date": "2020-11-09T20:41:59+09:00",
+  "path": "/nix/store/v4fv2f582m83zpznqjn97h77jndj6rm9-fzf",
+  "sha256": "04ycjgy40if0licc883lp7i6jpndvcndw24xp7lilskmaacpm5if",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/tpope/vim-surround",
+  "rev": "f51a26d3710629d031806305b6c8727189cd1935",
+  "date": "2019-11-28T01:29:20-05:00",
+  "path": "/nix/store/8nlgfbcyaix8xnn9fc348f9qnxz2nfny-vim-surround",
+  "sha256": "0aqrqn35xdiy80y7skxfsh3m33n6cdxw6lzz6aspfgzwllx2f0kr",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

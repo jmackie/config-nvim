@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/idris-hackers/idris-vim",
+  "rev": "091ed6b267749927777423160eeab520109dd9c1",
+  "date": "2017-12-04T19:36:45+01:00",
+  "path": "/nix/store/zll2f1fj62vnw63gsa8xi20nfd80bj9b-idris-vim",
+  "sha256": "1zibar2vxcmai0k37ricwnimfdv1adxfbbvz871rc4l6h3q85if1",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

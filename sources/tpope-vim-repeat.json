@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/tpope/vim-repeat",
+  "rev": "c947ad2b6a16983724a0153bdf7f66d7a80a32ca",
+  "date": "2019-11-12T19:31:06-05:00",
+  "path": "/nix/store/zpxj1bljmqi85hc0mhpkry6p763sv08a-vim-repeat",
+  "sha256": "00hhbqcx21j0738ad5xh92lsykpa0qxhdy1s7wnwc8d3jndmyjwb",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

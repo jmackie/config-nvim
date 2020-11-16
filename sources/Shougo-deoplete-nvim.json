@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/Shougo/deoplete.nvim",
+  "rev": "44a3e2393a99d5975ac7f282be10d008f4c70251",
+  "date": "2020-11-11T22:04:16+09:00",
+  "path": "/nix/store/qnyig9wx3ylpzscj810hl4fjbshfwnjq-deoplete.nvim",
+  "sha256": "1ikaqqmms0zcf997wf9jysdzmn2r1w9gqjqn58sw5drnnfamwvml",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

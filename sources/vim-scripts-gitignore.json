@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/vim-scripts/gitignore",
+  "rev": "061c5c756713f42b92b6b69b0a081075319a60d0",
+  "date": "2012-09-13T00:25:09-05:00",
+  "path": "/nix/store/jy6js9j9gp6d8c0lmshfjp8i8gnb3mc4-gitignore",
+  "sha256": "0ig1zq8kxwr90wsmwsldinjvm6z0d775n89i264hbxqqidynkdzw",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/vim-scripts/alex.vim",
+  "rev": "060b78e4edd0574487dcfdc61a6dda75e60afcda",
+  "date": "2010-10-17T19:05:34-07:00",
+  "path": "/nix/store/rxgb0gnlrc8xvpjiyxims2mzsv8ghasf-alex.vim",
+  "sha256": "1r9kgvqjy4w5hbg8i942qw5fd54jxmlvzacbikzsvbh8akdynmyh",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

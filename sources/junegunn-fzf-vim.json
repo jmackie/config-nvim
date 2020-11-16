@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/junegunn/fzf.vim",
+  "rev": "53b3aea0da5e3581e224c958dbc13558cbe5daee",
+  "date": "2020-11-11T16:56:18+09:00",
+  "path": "/nix/store/r22jsghxd1jpqxsn4i201dhkq7f65vff-fzf.vim",
+  "sha256": "0r19v3431ps7mmq2vb0vf1phwmgi1xp0n7z43wa68i4ilyjhbnr6",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/vmchale/dhall-vim",
+  "rev": "77d1c165bcbe6bb7f9eedbeafe390c2107d3c52e",
+  "date": "2020-08-18T20:20:54-05:00",
+  "path": "/nix/store/9w22a5pl74jnzwg1xkzr19fbwxxiy6yp-dhall-vim",
+  "sha256": "03x55x0gvf7n4i8hh6s5453mf5h43pf7kdy817q6w1149bd90vxy",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

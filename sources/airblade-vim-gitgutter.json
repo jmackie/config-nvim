@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/airblade/vim-gitgutter",
+  "rev": "987a33355ef424161fdbc4e5d625b5b5aed9704c",
+  "date": "2020-11-05T16:43:52+00:00",
+  "path": "/nix/store/mglab8ybyp2ng2d1wdkkav6chsa7faws-vim-gitgutter",
+  "sha256": "1qg5ri74wipf0krnwgii2jqdzy36hpwnx8nvgf7vkw8a3l90rswj",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

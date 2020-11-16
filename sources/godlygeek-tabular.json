@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/godlygeek/tabular",
+  "rev": "339091ac4dd1f17e225fe7d57b48aff55f99b23a",
+  "date": "2019-02-19T12:42:08-05:00",
+  "path": "/nix/store/v06jjxd32r2ldaq8c7cc65yahci5a26a-tabular",
+  "sha256": "0jq91770wsp2waw7pywxjqx59v0vg54gfzirgcd85pg61w22bfla",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

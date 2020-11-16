@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/rakr/vim-one",
+  "rev": "f8bcef1968f01842d92abbcb098ec28ad3931ea5",
+  "date": "2020-08-09T17:36:40+10:00",
+  "path": "/nix/store/9wcfqsjlk9s7gccw8440inn65z80yn2v-vim-one",
+  "sha256": "12czxjh68hdnca4wdk9ypd5c56v1njv6wc2bcxqaj1ff09pgllmy",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

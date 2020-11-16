@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/reasonml-editor/vim-reason-plus",
+  "rev": "c11a2940f8f3e3915e472c366fe460b0fe008bac",
+  "date": "2020-02-19T16:52:50-08:00",
+  "path": "/nix/store/7qfpsdwb3nr3rcq2vvlliv37ncrxgx5j-vim-reason-plus",
+  "sha256": "1vx7cwxzj6f12qcwcwa040adqk9cyzjd9f3ix26hnw2dw6r9cdr4",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

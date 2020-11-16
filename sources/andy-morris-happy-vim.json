@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/andy-morris/happy.vim",
+  "rev": "d5edc4efdfcf52258a0233e67cbd4f35029eb238",
+  "date": "2017-08-24T10:49:29+01:00",
+  "path": "/nix/store/ylg7fidalk93sf1xq746i84lsgkb2z40-happy.vim",
+  "sha256": "005s1hr7lxfl9wwn9lzr9axpj3cl7lj29i1681jw63vlzbpr4d2v",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

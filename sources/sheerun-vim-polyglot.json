@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/sheerun/vim-polyglot",
+  "rev": "4af1321588c7dcb718022226cb27ec325973c2f0",
+  "date": "2020-11-04T00:44:02+01:00",
+  "path": "/nix/store/ydhrm48ivrd7k1gssil28sd4brdjkvyr-vim-polyglot",
+  "sha256": "1dghqg23c47qmicmlrhjh6i1fan5bj5s21yinpf58ki7l68rf881",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}
