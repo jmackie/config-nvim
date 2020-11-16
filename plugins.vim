@@ -32,6 +32,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/gitignore'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
 
 " Dark theme
 Plug 'NLKNguyen/papercolor-theme'
