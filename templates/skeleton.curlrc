@@ -1,0 +1,14 @@
+# vim:ft=dosini
+
+request = "GET"
+url = "google.com"
+header = "x-example: foo"
+
+# Follow redirects
+location
+
+# Chatty output
+verbose
+
+# Add a request body if you want (easiest to do this from file)
+#data = @request.json
