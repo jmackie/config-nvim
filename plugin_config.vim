@@ -50,6 +50,9 @@ let g:ale_lint_on_save = 1
 " Format on save
 let g:ale_fix_on_save = 1
 
+" Don't hover
+let g:ale_hover_cursor = 0
+
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_set_highlights = 0  " don't highlight
@@ -79,6 +82,8 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('sources', {
 \ '_': ['ale'],
 \})
+
+set omnifunc=ale#completion#OmniFunc
 
 
 " itchyny/lightline.vim
