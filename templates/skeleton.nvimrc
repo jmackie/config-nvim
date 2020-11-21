@@ -1,12 +1,3 @@
-" See :help ale-lint-language-servers
-call ale#linter#Define('haskell', {
-\   'name': 'ghcide',
-\   'lsp': 'stdio',
-\   'executable': '/home/jmackie/habito/dev/bin/ghcide',
-\   'command': '%e --lsp',
-\   'project_root': '/home/jmackie/habito',
-\})
-
 " https://github.com/w0rp/ale/blob/master/supported-tools.md
 " https://github.com/w0rp/ale/tree/master/ale_linters
 let g:ale_linters = {
@@ -29,6 +20,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'terraform': ['terraform'],
+\   'elixir': ['mix_format'],
 \}
 
 "   'json': ['prettier'],
@@ -38,3 +30,12 @@ let g:ale_fixers = {
 "   'bzl': [{buffer -> { 'command': 'buildifier' }}],
 
 "map <c-b> :make<CR>
+
+" See :help ale-lint-language-servers
+"  call ale#linter#Define('haskell', {
+"  \   'name': 'ghcide',
+"  \   'lsp': 'stdio',
+"  \   'executable': '/home/jmackie/habito/dev/bin/ghcide',
+"  \   'command': '%e --lsp',
+"  \   'project_root': '/home/jmackie/habito',
+"  \})
