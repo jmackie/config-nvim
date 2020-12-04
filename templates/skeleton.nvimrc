@@ -3,31 +3,29 @@
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'nix': ['nix'],
-\   'haskell': ['ghcide'],
-\   'typescript': ['tsserver'],
-\   'typescriptreact': ['tsserver'],
+\   'haskell': ['hlint'],
 \}
+
+"   'typescript': ['tsserver'],
+
+"let g:ale_elixir_elixir_ls_config = { 'elixirLS': { 'dialyzerEnabled': v:false }}
 
 " https://github.com/w0rp/ale/blob/master/autoload/ale/fix/registry.vim
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'go': ['goimports'],
 \   'sh': ['shfmt'],
-\   'dhall': [{buffer -> { 'command': 'dhall --ascii format' }}],
+\   'nix': [{buffer -> { 'command': 'nixfmt' }}],
+\   'json': ['prettier'],
 \   'haskell': [{buffer -> { 'command': 'ormolu' }}],
-\   'purescript': [{buffer -> { 'command': 'purty %t' }}],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
-\   'terraform': ['terraform'],
 \   'elixir': ['mix_format'],
 \}
 
-"   'json': ['prettier'],
+"   'go': ['goimports'],
 "   'markdown': ['prettier'],
 "   'yaml': ['prettier'],
-"   'nix': [{buffer -> { 'command': 'nixfmt' }}],
 "   'bzl': [{buffer -> { 'command': 'buildifier' }}],
+"   'purescript': [{buffer -> { 'command': 'purty %t' }}],
+"   'dhall': [{buffer -> { 'command': 'dhall --ascii format' }}],
 
 "map <c-b> :make<CR>
 
