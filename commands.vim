@@ -20,6 +20,7 @@ augroup END
 if has("autocmd")
   augroup templates
     autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/skeleton.sh
+    autocmd BufNewFile *.py 0r ~/.config/nvim/templates/skeleton.py
     autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
     autocmd BufNewFile webpack.config.js 0r ~/.config/nvim/templates/skeleton.webpack.config.js
     autocmd BufNewFile .nvimrc 0r ~/.config/nvim/templates/skeleton.nvimrc
